@@ -11,7 +11,11 @@ const CardPizza = ({name, price, ingredients, image}) => {
 				</li>
 				<li className="list-group-item">
 					<h6>Ingredientes:</h6>
-					<p className='ingredients'>🍕 {ingredients.join(", ")}</p>
+					<ul className='ingredients'>
+						{ingredients.map((ingredient, index) => (
+							<li key={index}>🍕 {ingredient}</li>
+						))}
+					</ul>
 				</li>
 				<li className="list-group-item">
 					<h6 className='precio'>Precio: ${price.toLocaleString()}</h6>

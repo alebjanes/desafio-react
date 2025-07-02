@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Navbar.css'
+import { Link } from "react-router-dom";
 
-const Navbar = ({ setView }) => {
+const Navbar = () => {
 	const total = 25000;
 	const [token, setToken] = useState(false);
 
@@ -9,23 +10,15 @@ const Navbar = ({ setView }) => {
 		<nav>
 			<div className='main-buttons'>
 				Pizzería Mamma Mia!
-				<button className="btn nav-btn" onClick={() => setView('home')}>🍕 Home</button>
-				<button
-					className="btn nav-btn"
-					onClick={() => setView('login')}
-				>
-					{token ? "🔓 Profile" : "🔐 Login"}
-				</button>
-				<button
-					className="btn nav-btn"
-					onClick={() => setView('register')}
-				>
-					{token ? "🔒 Logout" : "🔐 Register"}
-				</button>
+				<Link to="/" className="text-white ms-2 px-2 py-1 text-decoration-none nav-btn">🍕 Home</Link>
+				<Link to="/login" className="text-white ms-2 px-2 py-1 text-decoration-none nav-btn">{token ? "🔓 Profile" : "🔐 Login"}</Link>
+				<Link to="/register" className="text-white ms-2 px-2 py-1 text-decoration-none nav-btn">{token ? "🔒 Logout" : "🔐 Register"}</Link>
 			</div>
-
 			<div className='total'>
-				<button className="btn total-btn">🛒 Total: ${total.toLocaleString()}</button>
+				<Link to="/profile" className="text-white ms-2 px-2 py-1 text-decoration-none nav-btn">Profile</Link>
+				<Link to="/cart" className="text-white ms-2 px-2 py-1 text-decoration-none nav-btn">
+					🛒 Total: ${total.toLocaleString()}
+				</Link>
 			</div>
 		</nav>
 	)
