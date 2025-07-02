@@ -1,25 +1,31 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import Home from './components/home/Home'
+import Home from './pages/Home'
 import Footer from './components/Footer'
-import Cart from './components/Cart'
-import Register from './components/forms/Register'
-import Login from './components/forms/Login'
-import Pizza from './components/Pizza'
-import { useState } from 'react'
-import { pizzas } from './data/pizzas'
+import Cart from './pages/Cart'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import Pizza from './pages/Pizza'
+import NotFound from './pages/NotFound'
+import Profile from './pages/Profile'
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [view, setView] = useState('pizza')
 
   return (
     <>
-      <Navbar setView={setView} />
-      {view === 'home' && <Home pizzas={pizzas} />}
-      {view === 'login' && <Login />}
-      {view === 'register' && <Register />}
-      {view === 'cart' && <Cart />}
-      {view === 'pizza' && <Pizza />}
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/pizza/p001" element={<Pizza />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </>
   )

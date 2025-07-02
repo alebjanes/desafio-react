@@ -16,6 +16,8 @@ nav {
     background-color: #212529;
     color: white;
     border: 1px solid white;
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
 
 .total-btn {
