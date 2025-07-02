@@ -25,7 +25,10 @@ const Navbar = ({ setView }) => {
 			</div>
 
 			<div className='total'>
-				<button className="btn total-btn">🛒 Total: ${total.toLocaleString()}</button>
+				<button 
+					className="btn total-btn"
+					onClick={() => setView('cart')}
+				>🛒 Total: ${total.toLocaleString()}</button>
 			</div>
 		</nav>
 	)
