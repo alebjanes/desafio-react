@@ -1,0 +1,27 @@
+.pizza {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.pizza img {
+    width: 100%;
+    max-width: 500px;
+    flex-shrink: 1;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.description p {
+    text-align: left;
+}
